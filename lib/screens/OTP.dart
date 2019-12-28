@@ -20,12 +20,67 @@ class _OTPState extends State<OTP>{
             mainAxisAlignment: MainAxisAlignment.center,
             children: <Widget>[
               Text('Enter OTP Here',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w500,),),
+
               Row(
+                mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
-                  Container(),
+                  SizedBox(width: 20.0,),
+                  Container(
+                    height: 50,
+                    width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+                  Container(
+                      height: 50,
+                      width: 30,
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                  ),
+                  SizedBox(
+                    width: 20.0,
+                  ),
+
                 ],
               ),
 
+              SizedBox(height: 38.0,),
+
+              RaisedButton(onPressed: (){},
+                child: Text('Done',style: TextStyle(fontSize: 20.0),),color: Colors.green,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
 
             ],
           ),
