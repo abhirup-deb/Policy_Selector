@@ -22,11 +22,13 @@ class _HomePageState extends State<HomePage>{
             SizedBox(
               height: 30.0,
             ),
-            RaisedButton(onPressed: null,),
+            SizedBox(child: RaisedButton(onPressed: (){},child: Text('Policy Maker',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+              height: 50.0,width: 190.0,),
             SizedBox(
               height: 30.0,
             ),
-            RaisedButton(onPressed: null,),
+            SizedBox(child: RaisedButton(onPressed: (){},child: Text('User',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+              height: 50.0,width: 190.0,),
           ],
         ),
       ),
