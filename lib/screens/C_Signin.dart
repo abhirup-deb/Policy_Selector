@@ -9,6 +9,8 @@ class C_Signin extends StatefulWidget{
 class _C_SigninState extends State<C_Signin>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Text('Hi from C'),
+    );
   }
 }

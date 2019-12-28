@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:policy_maker/screens/C_Signin.dart';
+import 'package:policy_maker/screens/PMkr_Signin.dart';
+import 'package:policy_maker/screens/User_Signin.dart';
 
 class HomePage extends StatefulWidget{
   static const String id = 'home';
@@ -17,17 +20,23 @@ class _HomePageState extends State<HomePage>{
           crossAxisAlignment: CrossAxisAlignment.center,
 
           children: <Widget>[
-            SizedBox(child: RaisedButton(onPressed: (){},child: Text('Commissioner',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+            SizedBox(child: RaisedButton(onPressed: (){
+              Navigator.pushNamed(context, C_Signin.id,);
+            },child: Text('Commissioner',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
               height: 50.0,width: 190.0,),
             SizedBox(
               height: 30.0,
             ),
-            SizedBox(child: RaisedButton(onPressed: (){},child: Text('Policy Maker',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+            SizedBox(child: RaisedButton(onPressed: (){
+              Navigator.pushNamed(context, PMkr_Signin.id);
+            },child: Text('Policy Maker',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
               height: 50.0,width: 190.0,),
             SizedBox(
               height: 30.0,
             ),
-            SizedBox(child: RaisedButton(onPressed: (){},child: Text('User',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+            SizedBox(child: RaisedButton(onPressed: (){
+              Navigator.pushNamed(context, User_Signin.id);
+            },child: Text('User',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
               height: 50.0,width: 190.0,),
           ],
         ),

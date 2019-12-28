@@ -9,6 +9,8 @@ class PMkr_Signin extends StatefulWidget{
 class _PMkr_SigninState extends State<PMkr_Signin>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      body: Text('Hi from PMkr'),
+    );
   }
 }
