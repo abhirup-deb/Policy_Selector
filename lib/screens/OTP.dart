@@ -21,6 +21,8 @@ class _OTPState extends State<OTP>{
             children: <Widget>[
               Text('Enter OTP Here',style: TextStyle(fontSize: 20.0,fontWeight: FontWeight.w500,),),
 
+              SizedBox(height: 20.0,),
+
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: <Widget>[
@@ -28,7 +30,7 @@ class _OTPState extends State<OTP>{
                   Container(
                     height: 50,
                     width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -36,7 +38,7 @@ class _OTPState extends State<OTP>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -44,7 +46,7 @@ class _OTPState extends State<OTP>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -52,7 +54,7 @@ class _OTPState extends State<OTP>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -60,7 +62,7 @@ class _OTPState extends State<OTP>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -68,7 +70,7 @@ class _OTPState extends State<OTP>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
                   ),
                   SizedBox(
                     width: 20.0,
