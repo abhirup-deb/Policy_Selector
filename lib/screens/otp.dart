@@ -21,7 +21,7 @@ class _otpState extends State<otp>{
       String phno = '9830818161';
       var _otp = OTP.generateTOTPCode("JBSWY3DPEHPK3PXP", DateTime.now().microsecondsSinceEpoch);
       String mssg = "Your OTP is : $_otp";
-      otp.sendOtp(phno,mssg);
+      otp.sendOtp(phno,mssg,100000,999999,'+91');
     super.initState();
   }
 
