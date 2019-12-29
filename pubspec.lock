@@ -150,7 +150,7 @@ packages:
     source: sdk
     version: "0.0.99"
   sms:
-    dependency: "direct main"
+    dependency: transitive
     description:
       name: sms
       url: "https://pub.dartlang.org"

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:otp/otp.dart';
 import 'package:flutter_otp/flutter_otp.dart';
-import 'package:sms/sms.dart';
+
 
 
 class otp extends StatefulWidget{
