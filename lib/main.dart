@@ -3,7 +3,7 @@ import 'package:policy_maker/screens/home.dart';
 import 'package:policy_maker/screens/C_Signin.dart';
 import 'package:policy_maker/screens/User_Signin.dart';
 import 'package:policy_maker/screens/PMkr_Signin.dart';
-import 'package:policy_maker/screens/OTP.dart';
+import 'package:policy_maker/screens/otp.dart';
 
 void main() => runApp(MyApp());
 
@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         C_Signin.id: (context) => C_Signin(),
         PMkr_Signin.id: (context) => PMkr_Signin(),
         User_Signin.id: (context) => User_Signin(),
-       OTP.id: (context) => OTP(),
+        otp.id: (context) => otp(),
      },
     );
   }

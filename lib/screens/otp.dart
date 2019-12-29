@@ -1,15 +1,35 @@
 import 'package:flutter/material.dart';
+import 'package:otp/otp.dart';
+import 'package:flutter_otp/flutter_otp.dart';
+import 'package:sms/sms.dart';
 
-class OTP extends StatefulWidget{
-  static const String id = 'OTP';
+
+class otp extends StatefulWidget{
+  static const String id = 'otp';
   @override
-  _OTPState createState() => _OTPState();
+  _otpState createState() => _otpState();
 }
 
-class _OTPState extends State<OTP>{
+class _otpState extends State<otp>{
+  FlutterOtp otp = FlutterOtp();
+
+
+
+
+  @override
+  void initState() {
+      String phno = '9830818161';
+      var _otp = OTP.generateTOTPCode("JBSWY3DPEHPK3PXP", DateTime.now().microsecondsSinceEpoch);
+      String mssg = "Your OTP is : $_otp";
+      otp.sendOtp(phno,mssg);
+    super.initState();
+  }
+
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text('OTP Screen'),),
+
       body: Center(child: Container(
         padding: EdgeInsets.all(8.0),
         height: 450.0,

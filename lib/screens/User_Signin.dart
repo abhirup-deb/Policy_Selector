@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:policy_maker/screens/OTP.dart';
+import 'package:policy_maker/screens/otp.dart';
 
 class User_Signin extends StatefulWidget{
   static const String id = 'USignin';
@@ -35,7 +35,7 @@ class _User_SigninState extends State<User_Signin>{
                     ),)),
                 SizedBox(height: 4.0,),
                 RaisedButton(onPressed: (){
-                  Navigator.pushNamed(context, OTP.id);
+                  Navigator.pushNamed(context, otp.id);
                 },
                   child: Text('Login',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
 
