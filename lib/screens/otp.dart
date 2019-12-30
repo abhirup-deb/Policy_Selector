@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:otp/otp.dart';
+import 'dart:math';
 import 'package:flutter_otp/flutter_otp.dart';
 
 
@@ -12,17 +12,26 @@ class otp extends StatefulWidget{
 
 class _otpState extends State<otp>{
   FlutterOtp otp = FlutterOtp();
-
-
-
+  int _otp;
+  String _notp;
 
   @override
   void initState() {
       String phno = '9830818161';
-      var _otp = OTP.generateTOTPCode("JBSWY3DPEHPK3PXP", DateTime.now().microsecondsSinceEpoch);
+      _otp = 100000 + Random().nextInt(999999 - 100000);
+      //print(_otp);
       String mssg = "Your OTP is : $_otp";
       otp.sendOtp(phno,mssg,100000,999999,'+91');
     super.initState();
+  }
+
+  @override
+  void Result(String newOTP){
+    //print(newOTP);
+    if(newOTP == _otp.toString()){
+      print('Success');
+    }
+    else{print('Failure');}
   }
 
   @override
@@ -50,7 +59,9 @@ class _otpState extends State<otp>{
                   Container(
                     height: 50,
                     width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp = val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -58,7 +69,9 @@ class _otpState extends State<otp>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp += val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -66,7 +79,9 @@ class _otpState extends State<otp>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp += val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -74,7 +89,9 @@ class _otpState extends State<otp>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp += val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -82,7 +99,9 @@ class _otpState extends State<otp>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp += val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -90,7 +109,9 @@ class _otpState extends State<otp>{
                   Container(
                       height: 50,
                       width: 30,
-                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number)
+                      child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,maxLength:1,keyboardType: TextInputType.number,onChanged: (val){
+                        _notp += val;
+                      },)
                   ),
                   SizedBox(
                     width: 20.0,
@@ -101,8 +122,12 @@ class _otpState extends State<otp>{
 
               SizedBox(height: 38.0,),
 
-              RaisedButton(onPressed: (){},
-                child: Text('Done',style: TextStyle(fontSize: 20.0),),color: Colors.green,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
+              RaisedButton(onPressed: (){
+                setState(() {
+                  Result(_notp);
+                });
+              },
+                child: Text('Done',style: TextStyle(fontSize: 20.0,),),color: Colors.green,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
 
             ],
           ),
@@ -111,3 +136,4 @@ class _otpState extends State<otp>{
     );
   }
 }
+
