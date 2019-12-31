@@ -21,7 +21,7 @@ class MyApp extends StatelessWidget {
         C_Signin.id: (context) => C_Signin(),
         PMkr_Signin.id: (context) => PMkr_Signin(),
         User_Signin.id: (context) => User_Signin(),
-        otp.id: (context) => otp(),
+        otp.id: (context) => otp(tag: null,),
      },
     );
   }

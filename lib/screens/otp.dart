@@ -5,7 +5,9 @@ import 'package:flutter_otp/flutter_otp.dart';
 
 
 class otp extends StatefulWidget{
+  otp({Key key,this.tag}): super(key:key);
   static const String id = 'otp';
+  final int tag;
   @override
   _otpState createState() => _otpState();
 }
