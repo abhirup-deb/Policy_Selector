@@ -9,6 +9,9 @@ class User extends StatefulWidget{
 class _UserState extends State<User>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(title: Text('us'),),
+      body: Text('hi'),
+    );
   }
 }

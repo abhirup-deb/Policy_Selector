@@ -1,13 +1,16 @@
 import 'package:flutter/material.dart';
 import 'dart:math';
 import 'package:flutter_otp/flutter_otp.dart';
+import 'package:policy_maker/Dashboards/Commissioner.dart';
+import 'package:policy_maker/Dashboards/PolicyMaker.dart';
+import 'package:policy_maker/Dashboards/User.dart';
 
 
 
 class otp extends StatefulWidget{
-  otp({Key key,this.tag}): super(key:key);
-  static const String id = 'otp';
   final int tag;
+  const otp({Key key,this.tag}): super(key:key);
+  static const String id = 'otp';
   @override
   _otpState createState() => _otpState();
 }
@@ -21,17 +24,23 @@ class _otpState extends State<otp>{
   void initState() {
       String phno = '9830818161';
       _otp = 100000 + Random().nextInt(999999 - 100000);
-      //print(_otp);
+      print(_otp);
       String mssg = "Your OTP is : $_otp";
       otp.sendOtp(phno,mssg,100000,999999,'+91');
     super.initState();
   }
 
   @override
-  void Result(String newOTP){
-    //print(newOTP);
+  void Result(String newOTP,int tag){
+    print(newOTP);
     if(newOTP == _otp.toString()){
       print('Success');
+      if(tag==0)
+        Navigator.pushNamed(context,Commissioner.id );
+      else if(tag==1)
+        Navigator.pushNamed(context, PolicyMaker.id);
+      else
+        Navigator.pushNamed(context, User.id);
     }
     else{print('Failure');}
   }
@@ -126,7 +135,7 @@ class _otpState extends State<otp>{
 
               RaisedButton(onPressed: (){
                 setState(() {
-                  Result(_notp);
+                  Result(_notp,widget.tag);
                 });
               },
                 child: Text('Done',style: TextStyle(fontSize: 20.0,),),color: Colors.green,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),

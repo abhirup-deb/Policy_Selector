@@ -9,6 +9,9 @@ class PolicyMaker extends StatefulWidget{
 class _PolicyMakerState extends State<PolicyMaker>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold();
+    return Scaffold(
+      appBar: AppBar(title: Text('Pm Maker'),),
+      body: Text('hi'),
+    );
   }
 }
