@@ -9,6 +9,7 @@ import 'package:policy_maker/Dashboards/PolicyMaker.dart';
 import 'package:policy_maker/Dashboards/Commissioner.dart';
 import 'package:policy_maker/screens/C_Signup.dart';
 import 'package:policy_maker/screens/PMkr_Signup.dart';
+import 'package:policy_maker/screens/User_Signup.dart';
 
 void main() => runApp(MyApp());
 
@@ -27,11 +28,13 @@ class MyApp extends StatelessWidget {
         PMkr_Signin.id: (context) => PMkr_Signin(),
         PMkr_Signup.id: (context) => PMkr_Signup(),
         User_Signin.id: (context) => User_Signin(),
+        User_Signup.id: (context) => User_Signup(),
         otp.id: (context) => otp(tag: null,),
         C_Signup.id: (context) => C_Signup(),
         Commissioner.id: (context) => Commissioner(),
         PolicyMaker.id: (context) => PolicyMaker(),
         User.id: (context) => User(),
+
      },
     );
   }

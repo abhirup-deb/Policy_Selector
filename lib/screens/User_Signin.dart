@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:policy_maker/screens/otp.dart';
+import 'package:policy_maker/screens/User_Signup.dart';
 
 class User_Signin extends StatefulWidget{
   static const String id = 'USignin';
@@ -41,7 +42,25 @@ class _User_SigninState extends State<User_Signin>{
                 SizedBox(
                   height: 50.0,
                 ),
-                Text("New Here? You can SignUp from here.",textAlign: TextAlign.end,),
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  children: <Widget>[
+                    Text("New to this App?  You can"),
+                    SizedBox(
+                      width: 4.0,
+                    ),
+                    GestureDetector(
+                      child: Text("SignUp",style: TextStyle(color: Colors.green,fontWeight: FontWeight.w900,fontSize: 17.0,decoration: TextDecoration.underline,decorationThickness: 2.5,),),
+                      onTap: (){
+                        Navigator.pushNamed(context, User_Signup.id);
+                      },
+                    ),
+                    SizedBox(
+                      width: 4.0,
+                    ),
+                    Text("Here"),
+                  ],
+                ),
               ],
             ),
           ),
