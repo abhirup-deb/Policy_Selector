@@ -10,8 +10,8 @@ class _PolicyMakerState extends State<PolicyMaker>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('Pm Maker'),),
-      body: Text('hi'),
+      appBar: AppBar(title: Text('DashBoard'),centerTitle: true,),
+
     );
   }
 }

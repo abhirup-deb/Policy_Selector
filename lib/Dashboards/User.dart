@@ -10,8 +10,7 @@ class _UserState extends State<User>{
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text('us'),),
-      body: Text('hi'),
+      appBar: AppBar(title: Text('DashBoard'),centerTitle: true,),
     );
   }
 }
