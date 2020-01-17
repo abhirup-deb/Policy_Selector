@@ -38,12 +38,16 @@ class _User_SigninState extends State<User_Signin>{
                   Navigator.of(context).push(MaterialPageRoute(builder: (_) => new otp(tag: 2),));
                 },
                   child: Text('Login',style: TextStyle(fontSize: 20.0),),color: Colors.orangeAccent,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
-
+                SizedBox(
+                  height: 50.0,
+                ),
+                Text("New Here? You can SignUp from here.",textAlign: TextAlign.end,),
               ],
             ),
           ),
         ),
       ),
+
     );
   }
 }
