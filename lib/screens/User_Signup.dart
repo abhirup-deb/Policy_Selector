@@ -10,7 +10,7 @@ class User_Signup extends StatefulWidget{
 class _User_SignupState extends State<User_Signup>{
   @override
   Widget build(BuildContext context) {
-    return Scaffold(appBar: AppBar(title: Text("Register a User"),),
+    return Scaffold(appBar: AppBar(title: Text("Register Yourself"),),
     body: Center(
       child: Container(
           padding: EdgeInsets.all(8.0),
