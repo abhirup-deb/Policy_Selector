@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:policy_maker/screens/User_Signin.dart';
+import 'package:flushbar/flushbar.dart';
 
 class User_Signup extends StatefulWidget{
   static const String id = 'USignup';
@@ -8,6 +9,26 @@ class User_Signup extends StatefulWidget{
 }
 
 class _User_SignupState extends State<User_Signup>{
+  bool _validate1 = false;
+  bool _validate2 = false;
+  bool _validate3 = false;
+  final _name = TextEditingController();
+  final _aadhar = TextEditingController();
+  final _email = TextEditingController();
+  final _num = TextEditingController();
+  final _add = TextEditingController();
+
+  @override
+  void dispose() {
+    _name.dispose();
+    _aadhar.dispose();
+    _email.dispose();
+    _num.dispose();
+    _add.dispose();
+    super.dispose();
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(appBar: AppBar(title: Text("Register Yourself"),),
@@ -20,36 +41,36 @@ class _User_SignupState extends State<User_Signup>{
           child: ListView(
             children: <Widget>[
                 Container(height: 70.0,width:240.0,
-                    child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,decoration: InputDecoration(
-                        hintText: 'Enter Your Name',hintStyle: TextStyle(color: Colors.blueGrey)
+                    child: TextField(style: TextStyle(color: Colors.white70),controller: _name,textAlign: TextAlign.center,decoration: InputDecoration(
+                        hintText: 'Enter Your Name',hintStyle: TextStyle(color: Colors.blueGrey,),errorText: _validate1?"Please Fill up this Field":null,
                     ),)),
 
               SizedBox(
                 height: 3.0,
               ),
               Container(height: 70.0,width:240.0,
-                  child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,decoration: InputDecoration(
-                      hintText: 'Enter Your Aadhar No.',hintStyle: TextStyle(color: Colors.blueGrey)
+                  child: TextField(style: TextStyle(color: Colors.white70),controller:_aadhar,textAlign: TextAlign.center,decoration: InputDecoration(
+                      hintText: 'Enter Your Aadhar No.',hintStyle: TextStyle(color: Colors.blueGrey,),errorText: _validate2?"Please Fill up this Field":null,
                   ),)),
               SizedBox(
                 height: 3.0,
               ),
               Container(height: 70.0,width:240.0,
-                  child: TextField(style: TextStyle(color: Colors.white70),keyboardType: TextInputType.emailAddress,textAlign: TextAlign.center,decoration: InputDecoration(
-                      hintText: 'Enter Your Email',hintStyle: TextStyle(color: Colors.blueGrey)
+                  child: TextField(style: TextStyle(color: Colors.white70),controller: _email,keyboardType: TextInputType.emailAddress,textAlign: TextAlign.center,decoration: InputDecoration(
+                      hintText: 'Enter Your Email',hintStyle: TextStyle(color: Colors.blueGrey),
                   ),)),
               SizedBox(
                 height: 3.0,
               ),
               Container(height: 70.0,width:240.0,
-                  child: TextField(style: TextStyle(color: Colors.white70),maxLength:10,textAlign: TextAlign.center,keyboardType: TextInputType.number,decoration: InputDecoration(
-                      hintText: 'Enter Your 10 digit Contact Number',hintStyle: TextStyle(color: Colors.blueGrey,)
+                  child: TextField(style: TextStyle(color: Colors.white70),maxLength:10,controller: _num,textAlign: TextAlign.center,keyboardType: TextInputType.number,decoration: InputDecoration(
+                      hintText: 'Enter Your 10 digit Contact Number',hintStyle: TextStyle(color: Colors.blueGrey,),errorText: _validate3?"Please Fill up this Field":null,
                   ),)),
               SizedBox(
                 height: 3.0,
               ),
               Container(height: 70.0,width:240.0,
-                  child: TextField(style: TextStyle(color: Colors.white70),textAlign: TextAlign.center,decoration: InputDecoration(
+                  child: TextField(style: TextStyle(color: Colors.white70),controller: _add,textAlign: TextAlign.center,decoration: InputDecoration(
                       hintText: 'Enter Your Current Address',hintStyle: TextStyle(color: Colors.blueGrey)
                   ),)),
               SizedBox(
@@ -59,7 +80,14 @@ class _User_SignupState extends State<User_Signup>{
               SizedBox(height: 4.0,),
               Center(
                 child: RaisedButton(onPressed: (){
-                  Navigator.pushNamed(context,User_Signin.id);
+                  setState(() {
+                    _name.text.isEmpty?_validate1=true:_validate1=false;
+                    _aadhar.text.isEmpty?_validate2=true:_validate2=false;
+                    _num.text.isEmpty?_validate3=true:_validate3=false;
+                  });
+                  if(_validate1==false && _validate2==false && _validate3==false){
+                    Navigator.pushNamed(context,User_Signin.id);
+                  }
                 },
                   child: Text('Register',style: TextStyle(fontSize: 20.0),),color: Colors.teal,elevation: 7.0,shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(38.0),),),
               ),
