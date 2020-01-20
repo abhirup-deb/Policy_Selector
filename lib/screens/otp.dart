@@ -24,7 +24,7 @@ class _otpState extends State<otp>{
   @override
   void initState() {
       String phno = '9830818161';
-      _otp = 100000 + Random().nextInt(999999 - 100000);
+      _otp = 100000 + Random().nextInt(899999 - 100000);
       print(_otp);
       String mssg = "Your OTP is : $_otp";
       otp.sendOtp(phno,mssg,100000,999999,'+91');
