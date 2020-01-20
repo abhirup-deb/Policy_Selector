@@ -4,6 +4,7 @@ import 'package:flutter_otp/flutter_otp.dart';
 import 'package:policy_maker/Dashboards/Commissioner.dart';
 import 'package:policy_maker/Dashboards/PolicyMaker.dart';
 import 'package:policy_maker/Dashboards/User.dart';
+import 'package:flushbar/flushbar.dart';
 
 
 
@@ -31,7 +32,7 @@ class _otpState extends State<otp>{
   }
 
   @override
-  void Result(String newOTP,int tag){
+  Widget Result(String newOTP,int tag){
     print(newOTP);
     if(newOTP == _otp.toString()){
       print('Success');
@@ -42,7 +43,19 @@ class _otpState extends State<otp>{
       else
         Navigator.pushNamed(context, User.id);
     }
-    else{print('Failure');}
+    else{print('Failure');
+
+      return Flushbar(
+        message: "Check the OTP and re-enter",
+        icon: Icon(
+          Icons.info,
+          size: 20.0,
+          color: Colors.blue[500],
+        ),
+        duration: Duration(seconds: 3),
+        leftBarIndicatorColor: Colors.blue[200],
+      )..show(context);
+    }
   }
 
   @override
