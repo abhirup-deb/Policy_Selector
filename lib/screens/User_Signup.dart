@@ -12,6 +12,7 @@ class _User_SignupState extends State<User_Signup>{
   bool _validate1 = false;
   bool _validate2 = false;
   bool _validate3 = false;
+  bool digit = false;
   final _name = TextEditingController();
   final _aadhar = TextEditingController();
   final _email = TextEditingController();
@@ -84,8 +85,23 @@ class _User_SignupState extends State<User_Signup>{
                     _name.text.isEmpty?_validate1=true:_validate1=false;
                     _aadhar.text.isEmpty?_validate2=true:_validate2=false;
                     _num.text.isEmpty?_validate3=true:_validate3=false;
+                    if(_num.text.length==10){
+                      digit = true;
+                    }
+                    else{
+                      Flushbar(
+                        message: "Enter a 10 digit Contact Number",
+                        icon: Icon(
+                          Icons.info,
+                          size: 20.0,
+                          color: Colors.red[500],
+                        ),
+                        duration: Duration(seconds: 5),
+                        leftBarIndicatorColor: Colors.red[200],
+                      )..show(context);
+                    }
                   });
-                  if(_validate1==false && _validate2==false && _validate3==false){
+                  if(_validate1==false && _validate2==false && _validate3==false && digit==true){
                     Navigator.pushNamed(context,User_Signin.id);
                   }
                 },
